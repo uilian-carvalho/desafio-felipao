@@ -1,50 +1,32 @@
 // Nome do herói
-let nomeHeroi = "Aya Kamikaze";
+const nomeHeroi = "Aya Kamikaze";
 
-// Pontos de Experiência do herói
-let experiencia = 2100;
+// Pontos de experiência do herói
+const experiencia = 2100;
 
-// Variável para armazenar o nível do herói
-let nivel;
-
-// Classifica o herói em um nível com base nos pontos de experiência
-switch (true) {
-  case experiencia <= 1000:
-    nivel = "Ferro";
-    break;
-
-  case experiencia >= 1000 && experiencia <= 2000:
-    nivel = "Bronze";
-    break;
-
-  case experiencia >= 2001 && experiencia <= 5000:
-    nivel = "Prata";
-    break;
-
-  case experiencia >= 5001 && experiencia <= 7000:
-    nivel = "Ouro";
-    break;
-
-  case experiencia >= 7001 && experiencia <= 8000:
-    nivel = "Platina";
-    break;
-
-  case experiencia >= 8001 && experiencia <= 9000:
-    nivel = "Ascendente";
-    break;
-
-  case experiencia >= 9001 && experiencia <= 10000:
-    nivel = "Imortal";
-    break;
-
-  case experiencia >= 10001:
-    nivel = "Radiante";
-    break;
-
-  default:
-    // Caso nenhum intervalo de experiência seja correspondente, define o nível como "Desconhecido"
-    nivel = "Desconhecido";
+// Função para determinar o nível do herói com base na experiência
+function determinarNivel(experiencia) {
+  if (experiencia <= 1000) {
+    return "ferro";
+  } else if (experiencia <= 2000) {
+    return "bronze";
+  } else if (experiencia <= 5000) {
+    return "prata";
+  } else if (experiencia <= 7000) {
+    return "ouro";
+  } else if (experiencia <= 8000) {
+    return "platina";
+  } else if (experiencia <= 9000) {
+    return "ascendente";
+  } else if (experiencia <= 10000) {
+    return "imortal";
+  } else {
+    return "radiante";
+  }
 }
 
+//Determina o nível do herói
+const nivel = determinarNivel(experiencia);
+
 //Exibe no console o nome do herói e o nível correspondente
-console.log("O herói de nome " + nomeHeroi + " está no nível " + nivel);
+console.log(`O herói de nome ${nomeHeroi} está no nível ${nivel}`);
